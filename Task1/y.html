@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Form</title>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required pattern="[A-Za-z0-9-_@]{3,}">
+        <small id="username-error" style="color: red;"></small>
+        <br>
+
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" minlength="3" maxlength="15" required>
+        <small id="full-name-error" style="color: red;"></small>
+        <br>
+
+        <label for="mobile-number">Mobile Number:</label>
+        <input type="tel" id="mobile-number" name="mobile-number" pattern="05\d{8}" required>
+        <small id="mobile-number-error" style="color: red;"></small>
+        <br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100">
+        <small id="age-error" style="color: red;"></small>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <small id="email-error" style="color: red;"></small>
+        <br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+            <option value="germany">Germany</option>
+        </select>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,24}$">
+        <small id="password-error" style="color: red;"></small>
+        <br>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required pattern=".*" title="Passwords must match." oninput="checkPasswordMatch(this)">
+        <small id="confirm-password-error" style="color: red;"></small>
+        <br>
+
+        <input type="submit" value="Save">
+        <input type="button" value="Clear" onclick="clearFields()">
+    </form>
+
+    <div id="success-message" style="color: green;"></div>
+
+    <script>
+        function validateForm() {
+            // Validation logic for all fields (similar to previous examples)
+
+            // If validation fails, display error messages and return false to prevent form submission
+            // If validation succeeds, display success message, clear fields, and return false to prevent form submission
+        }
+
+        function clearFields() {
+            // Clear all input fields and error messages
+        }
+
+        function checkPasswordMatch(input) {
+            // Password confirmation validation logic (similar to previous examples)
+        }
+    </script>
+</body>
+</html>
